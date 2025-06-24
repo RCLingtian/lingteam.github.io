@@ -1,0 +1,124 @@
+/* 聊天容器 */
+.chat-container {
+    height: 75vh; /* 修改聊天框高度为 70vh */
+    background-color: #f7f7f7;
+    overflow-y: auto;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    scrollbar-width: none; /* 隐藏 Firefox 滚动条 */
+    -ms-overflow-style: none; /* 隐藏 IE 和 Edge 滚动条 */
+}
+
+.chat-container::-webkit-scrollbar {
+    display: none; /* 隐藏 Chrome、Safari 和 Opera 滚动条 */
+}
+
+/* 消息样式 */
+.message {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message.ai {
+    align-items: flex-start;
+}
+
+.message.user {
+    align-items: flex-end;
+}
+
+.avatar-name-container {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.name {
+    margin: 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.bubble {
+    max-width: 70%;
+    padding: 12px;
+    border-radius: 10px;
+    position: relative;
+    /* 往上移动 5px */
+    bottom: 20px;
+}
+
+.ai .bubble {
+    background-color: #fff;
+    margin-left: 50px;
+}
+
+.user .bubble {
+    background-color: #9eea6a;
+    margin-right: 50px;
+}
+
+/* 输入容器 */
+.input-container {
+    display: flex;
+    padding: 20px;
+    margin: 0 20px 20px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#combinedInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.input-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.input-button:first-of-type {
+    margin-left: 0;
+}
+
+.input-button:hover {
+    background-color: #0056b3;
+}
+
+/* API 输入框 */
+#apiKeyInput {
+    display: block;
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 0 20px 20px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.input-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
