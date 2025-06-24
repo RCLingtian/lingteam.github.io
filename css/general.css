@@ -397,3 +397,10 @@ body{
     font-size: 16px; /* 调整用户名文字大小 */
     font-weight: 450; /* 调整字体粗细 */
 }
+@font-face {
+    font-family: AppleTTF;
+    src: url(apple.ttf);
+}
+*{
+    font-family: AppleTTF;
+}
