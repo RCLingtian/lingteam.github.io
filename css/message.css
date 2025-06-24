@@ -1,0 +1,36 @@
+.title{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-75%);
+    position: relative; 
+}
+
+.chat-container {
+    position: relative; /* 为按钮定位提供参考 */
+}
+
+.chat-switch-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px; /* 增大按钮宽度 */
+    height: 40px; /* 增大按钮高度 */
+    border-radius: 50%; /* 使按钮呈圆形 */
+    border: none;
+    background-color: #f0f0f0; /* 按钮背景色 */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 让 SVG 垂直居中 */
+    transition: background-color 0.3s; /* 添加过渡效果 */
+    z-index: 999; /* 设置较高的 z-index 值 */
+}
+
+.chat-switch-button .icon {
+    width: 80%; /* 增大 SVG 宽度 */
+    height: 80%; /* 增大 SVG 高度 */
+}
+
+.chat-switch-button:hover {
+    background-color: #d0d0d0; /* 鼠标悬浮时的背景色 */
+}

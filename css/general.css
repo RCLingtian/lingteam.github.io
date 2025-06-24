@@ -1,0 +1,399 @@
+body{
+    padding: 0%;
+    overflow: hidden; /* 防止页面出现滚动条 */
+}
+.Top {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 60px;
+    width: 100%; 
+}
+
+.logo {
+    margin-left: 100px;
+}
+
+.logo > img{
+    width: 60px;
+    height: auto;
+}
+.Navigation_XZ {
+    padding-left: 15px; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+    width: 250px;
+    cursor: pointer;
+    background-color: #f7f7f7;
+    border: none;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+.Navigation_button {
+    padding-left: 15px; 
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+    width: 250px;
+    cursor: pointer;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+.Navigation_Login_button {
+    padding-left: 15px; 
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+    width: 250px;
+    cursor: pointer;
+    background-color:#ff2442;
+    border: none;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+.Navigation_button:hover {
+    background-color: #f7f7f7; 
+}
+.Navigation_button > p{
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: 450;
+}
+.Navigation_XZ > p{
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: 450;
+}
+.Navigation_Login_button > p{
+    font-size: 16px;
+    margin-left: 0;
+    font-weight: 450;
+    margin-left: -10px;
+    text-align: center; 
+    width: 100%;
+    color: #f7f7f7;
+}
+.Navigation {
+    margin-left: 100px;
+    margin-top: 15px;
+    width: auto;
+    height: auto;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#loginBox {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    z-index: 1000;
+    width: 500px;
+    height: 400px;
+}
+
+#closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+}
+#closeButton:hover {
+    background-color: #3333331a; /* 鼠标悬停时图标颜色变化 */
+}
+#closeButton .icon {
+    width: 25px;
+    height: 25px;
+}
+#loginBox .login_title {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 50px; /* 确保容器占满父元素高度 */
+    text-align: center;
+    width: 200px;
+    background-color: #ebf3fe;
+    border-radius: 50px;
+}
+
+#loginBox .login_title p {
+    margin: 0;
+    line-height: normal;
+    color: #3d8af5;
+    font-weight: 400;
+}
+.loginBox {
+    margin-left: 20px;
+}
+.loginBox_h1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+.login_title {
+    margin-left: 20px;
+}
+.loginBox_input {
+    display: flex;
+    flex-direction: column; /* 设置为垂直方向布局 */
+    gap: 20px; /* 设置输入框之间的间距，可按需调整 */
+    width: 95%;
+    margin-top: 20px;
+}
+.loginBox_input input {
+    height: 50px; 
+    box-sizing: border-box; 
+    border-radius: 50px;
+    font-size: 16px; 
+    padding: 5px; 
+    /* 增加 padding-right 为验证码文字留出空间 */
+    padding-left: 15px;
+    padding-right: 100px; 
+    border: none;
+    outline: none;
+    background-color: #f7f7f7;
+}
+
+/* 验证码输入框容器样式 */
+.captcha-container {
+    position: relative;
+}
+.captcha-container > input {
+    width: 100%;
+}
+
+/* 验证码文字样式 */
+.captcha-text {
+    position: absolute;
+    right: 10px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    margin: 0;
+    cursor: pointer;
+    color: #333;
+    font-size: 14px;
+    /* 调整行高，确保文字垂直居中 */
+    line-height: 1; 
+    padding: 0 10px;
+}
+::placeholder {
+    color: #bbbbbb;
+}
+.remind_login {
+    color: #00000080;
+    font-size: 14px;
+    margin: 0;
+    margin-right: 35px;
+}
+.remind {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.loginBox_login_button {
+    padding-left: 15px; 
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+    width: 50%;
+    cursor: pointer;
+    background-color:#ff2442;
+    border: none;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    transform: translate(45%);
+    margin-top: 30px;
+}
+.loginBox_login_button > p{
+    font-size: 16px;
+    margin-left: 0;
+    font-weight: 450;
+    margin-left: -10px;
+    text-align: center; /* 文本水平居中 */
+    width: 100%; /* 让 p 元素宽度占满按钮 */
+    color: #f7f7f7;
+}
+/* 定义 fadeInOut 动画 */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -100%);
+    }
+    10% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    90% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -100%);
+    }
+}
+
+#errorPopup {
+    display: none;
+    position: fixed; /* 相对于浏览器窗口定位 */
+    top: 50px; /* 距离窗口顶部 50px */
+    left: 50%; /* 先将元素左边缘置于窗口水平中心 */
+    transform: translateX(-50%); /* 再将元素向左移动自身宽度的一半，实现水平居中 */
+    background-color: #ff4444; 
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    z-index: 1000; /* 确保弹窗显示在其他元素之上 */
+    animation: fadeInOut 2s ease-in-out;
+    width: 200px;
+    height: 30px;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+    font-weight: 400;
+}
+
+#errorPopup.show {
+    display: flex;
+}
+
+#errorPopup .icon {
+    margin-left: -5px; /* 可根据需要调整这个值 */
+}
+
+#errorPopup.show {
+    display: flex;
+}
+
+/* 定义淡入动画，使用 ease-in-out 实现缓入缓出 */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* 定义淡出动画，使用 ease-in-out 实现缓入缓出 */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+}
+
+/* 显示弹窗的类，应用淡入动画 */
+.show-popup {
+    display: flex !important;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* 隐藏弹窗的类，应用淡出动画 */
+.hide-popup {
+    animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+/* 定义渐入动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 定义渐出动画 */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* 渐入类 */
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+/* 渐出类 */
+.fade-out {
+    animation: fadeOut 0.3s ease-in-out forwards;
+}
+/* 添加包装器样式 */
+.wrapper {
+    display: flex;
+    height: 100vh; /* 让包装器高度占满视口 */
+    max-height: 100vh; /* 确保包装器高度不超过视口高度 */
+}
+
+.content {
+    width: 1470px; /* 宽度为 1920 - 250 - 100 */
+    margin-right: 100px;
+    padding-left: 20px;
+    max-height: 100%; /* 确保内容区域高度不超过视口高度 */
+}
+.loginBox_login_user_button {
+    display: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #ccc;
+    text-align: center;
+    line-height: 24px;
+    margin-right: 8px;
+    font-size: 14px;
+    overflow: hidden;
+    vertical-align: middle; /* 垂直居中对齐 */
+}
+
+.username {
+    font-size: 16px; /* 调整用户名文字大小 */
+    font-weight: 450; /* 调整字体粗细 */
+}
